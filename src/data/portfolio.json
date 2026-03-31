@@ -1,0 +1,127 @@
+{
+  "header": {
+    "name": "Your Name",
+    "title": "Full Stack Developer",
+    "tagline": "I build accessible, pixel-perfect digital experiences for the web."
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com",
+      "icon": "twitter"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:hello@example.com",
+      "icon": "mail"
+    }
+  ],
+  "about": {
+    "intro": "Hello! I'm a passionate developer specializing in building beautiful, functional web experiences.",
+    "bio": "I have experience working with modern web technologies and a strong focus on user experience and accessibility. Currently exploring new technologies and contributing to open source projects.",
+    "highlights": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Web Accessibility"]
+  },
+  "experience": [
+    {
+      "id": 1,
+      "company": "Tech Company",
+      "companyUrl": "https://example.com",
+      "position": "Senior Developer",
+      "startDate": "2022",
+      "endDate": "Present",
+      "description": "Led development of key features and mentored junior developers. Improved performance and accessibility of web applications.",
+      "tech": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
+    },
+    {
+      "id": 2,
+      "company": "Startup Inc",
+      "companyUrl": "https://example.com",
+      "position": "Full Stack Developer",
+      "startDate": "2020",
+      "endDate": "2022",
+      "description": "Built full-stack web applications from scratch. Implemented responsive designs and optimized performance.",
+      "tech": ["React", "Node.js", "PostgreSQL", "AWS"]
+    },
+    {
+      "id": 3,
+      "company": "Design Studio",
+      "companyUrl": "https://example.com",
+      "position": "Frontend Developer",
+      "startDate": "2019",
+      "endDate": "2020",
+      "description": "Collaborated with designers to bring mockups to life. Focused on pixel-perfect implementations and animations.",
+      "tech": ["HTML", "CSS", "JavaScript", "Responsive Design"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project One",
+      "description": "A beautiful web application showcasing modern design patterns and accessibility best practices.",
+      "image": "/images/project1.jpg",
+      "tech": ["React", "TypeScript", "Tailwind CSS"],
+      "github": "https://github.com",
+      "external": "https://example.com",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Project Two",
+      "description": "Full-stack application with real-time features and comprehensive testing.",
+      "image": "/images/project2.jpg",
+      "tech": ["Next.js", "Node.js", "PostgreSQL"],
+      "github": "https://github.com",
+      "external": "https://example.com",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Project Three",
+      "description": "Interactive dashboard with data visualization and custom animations.",
+      "image": "/images/project3.jpg",
+      "tech": ["React", "D3.js", "Express"],
+      "github": "https://github.com",
+      "external": "https://example.com",
+      "featured": false
+    }
+  ],
+  "writing": [
+    {
+      "id": 1,
+      "title": "Understanding Web Accessibility",
+      "date": "2024",
+      "description": "A deep dive into WCAG guidelines and practical tips for building accessible web applications.",
+      "image": "/images/writing1.jpg",
+      "url": "https://medium.com",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Modern React Patterns",
+      "date": "2024",
+      "description": "Exploring the latest React patterns and best practices for scalable applications.",
+      "image": "/images/writing2.jpg",
+      "url": "https://medium.com",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "CSS Grid vs Flexbox",
+      "date": "2023",
+      "description": "When to use CSS Grid and when to use Flexbox in your projects.",
+      "image": "/images/writing3.jpg",
+      "url": "https://medium.com",
+      "featured": false
+    }
+  ]
+}
