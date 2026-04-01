@@ -11,8 +11,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Your Name',
-  description: 'Full stack developer specializing in modern web technologies and user experience.',
+  title: 'Ulysses Ochoa',
+  description: 'Cybersecurity Analyst | Network Engineer',
 };
 
 export default function RootLayout({

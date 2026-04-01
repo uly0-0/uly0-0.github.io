@@ -15,9 +15,9 @@ const config: Config = {
           800: "#0f1419",
           700: "#1a1f36",
         },
-        teal: {
-          400: "#64ffda",
-          500: "#42d5d3",
+        skyblue: {
+          400: "#64beff",
+          500: "#64beff",
         },
         slate: {
           400: "#8892b0",

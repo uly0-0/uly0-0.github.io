@@ -41,7 +41,7 @@ body {
 
 /* Utility classes */
 .text-gradient {
-  background: linear-gradient(135deg, #64ffda 0%, #42d5d3 100%);
+  background: linear-gradient(135deg, #64d6ff 0%, #3689cd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -52,7 +52,7 @@ body {
 }
 
 .hex-color {
-  color: #64ffda;
+  color: #5fcfff;
 }
 
 /* Anchor link styling */
@@ -62,7 +62,7 @@ a {
 }
 
 a:hover {
-  color: #64ffda;
+  color: #3baffd;
   transition: color 0.3s ease;
 }
 
