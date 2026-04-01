@@ -1,66 +1,48 @@
 {
   "header": {
-    "name": "Your Name",
-    "title": "Full Stack Developer",
-    "tagline": "I build accessible, pixel-perfect digital experiences for the web."
+    "name": "Ulysses Ochoa",
+    "title": "Cybersecurity Analyst  | Information Technology Technician",
+    "tagline": "IT Experience with a Growing Focus on Cybersecurity & Digital Forensics"
   },
   "social": [
     {
       "name": "GitHub",
-      "url": "https://github.com",
+      "url": "https://github.com/uly0-0",
       "icon": "github"
     },
     {
       "name": "LinkedIn",
-      "url": "https://linkedin.com",
+      "url": "https://www.linkedin.com/in/ulyssesochoa/",
       "icon": "linkedin"
     },
     {
-      "name": "Twitter",
-      "url": "https://twitter.com",
-      "icon": "twitter"
-    },
-    {
       "name": "Email",
-      "url": "mailto:hello@example.com",
+      "url": "mailto:ulysses.ochoa02@gmail.com",
       "icon": "mail"
     }
   ],
   "about": {
-    "intro": "Hello! I'm a passionate developer specializing in building beautiful, functional web experiences.",
-    "bio": "I have experience working with modern web technologies and a strong focus on user experience and accessibility. Currently exploring new technologies and contributing to open source projects.",
-    "highlights": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Web Accessibility"]
-  },
+    "intro": "I'm a Computer Science graduate with a concentration in Advanced Cybersecurity and a strong foundation in IT systems, networking, and database management. My current focus is on cybersecurity, with a particular interest in digital forensics and incident response.",
+    "bio": "Previously, I worked as a IT Technician at Firebaugh Las Deltas Unified School District where I was able to gain a solid foundation in IT support, network administration, and system maintenance. In addition to my IT background, I have worked on several technical projects that reflect my growing expertise in cybersecurity. This includes deploying cloud-based infrastructure and managing SQL databases for a web application, as well as developing machine learning models for phishing detection. Through these projects, I have gained experience in secure system design, along with exposure to various tools and technologies commonly used in the cybersecurity field."
+    },
   "experience": [
     {
       "id": 1,
-      "company": "Tech Company",
-      "companyUrl": "https://example.com",
-      "position": "Senior Developer",
-      "startDate": "2022",
-      "endDate": "Present",
-      "description": "Led development of key features and mentored junior developers. Improved performance and accessibility of web applications.",
+      "company": "Firebaugh Las Deltas Unified School District",
+      "companyUrl": "https://www.fldusd.org/",
+      "position": "Information Technology Technician (Volunteer)",
+      "date": "June - September 2025",
+      "description": "Provided technical support and system maintenance for a school district environment, diagnosing and resolving hardware and software issues to ensure mininimal downtime, and ensuring secure handling of data through regular backups and updates. Assisted in improving network infrastructure by configuring wireless access points and organizing network distribution systems.",
       "tech": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
     },
     {
       "id": 2,
-      "company": "Startup Inc",
-      "companyUrl": "https://example.com",
-      "position": "Full Stack Developer",
-      "startDate": "2020",
-      "endDate": "2022",
-      "description": "Built full-stack web applications from scratch. Implemented responsive designs and optimized performance.",
-      "tech": ["React", "Node.js", "PostgreSQL", "AWS"]
-    },
-    {
-      "id": 3,
-      "company": "Design Studio",
-      "companyUrl": "https://example.com",
-      "position": "Frontend Developer",
-      "startDate": "2019",
-      "endDate": "2020",
-      "description": "Collaborated with designers to bring mockups to life. Focused on pixel-perfect implementations and animations.",
-      "tech": ["HTML", "CSS", "JavaScript", "Responsive Design"]
+      "company": "Firebaugh Las Deltas Unified School District",
+      "companyUrl": "https://www.fldusd.org/",
+      "position": "Information Technology Technician",
+      "date": "June - August, 2016 - 2019",
+      "description": "Provided technical support and system maintenance for a school district environment, diagnosing and resolving hardware and software issues to ensure mininimal downtime, and ensuring secure handling of data through regular backups and updates. Assisted in improving network infrastructure by configuring wireless access points and organizing network distribution systems.",
+      "tech": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
     }
   ],
   "projects": [

@@ -30,7 +30,7 @@ export default function Experience() {
                 </h3>
               </a>
               <p className="text-slate-400 text-sm font-mono mt-1">
-                {job.startDate} — {job.endDate}
+                {job.date}
               </p>
               <p className="text-slate-400 mt-3 leading-relaxed">
                 {job.description}

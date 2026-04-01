@@ -23,7 +23,7 @@ export default function Section({ id, title, children }: SectionProps) {
         animationFillMode: 'forwards',
       }}
     >
-      <div className="flex items-center mb-12 gap-4">
+      <div className="flex items-center mb-12 gap-4 lg:hidden">
         <span className="text-teal-400 font-mono text-lg">
           0{[1, 2, 3, 4].indexOf(['about', 'experience', 'projects', 'writing'].indexOf(id)) + 1}.
         </span>

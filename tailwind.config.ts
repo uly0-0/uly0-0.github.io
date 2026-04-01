@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          900: "#0a0e27",
+          900: "#0f1c30",
           800: "#0f1419",
           700: "#1a1f36",
         },
@@ -20,7 +20,7 @@ const config: Config = {
           500: "#64beff",
         },
         slate: {
-          400: "#8892b0",
+          400: "#bababa",
           300: "#ccd6f6",
           200: "#e6f1ff",
         },
