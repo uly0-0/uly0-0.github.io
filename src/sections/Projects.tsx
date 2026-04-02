@@ -19,8 +19,8 @@ export default function Projects() {
             }}
           >
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative bg-navy-800 rounded-lg p-6 border border-navy-700 group-hover:border-teal-400/50 transition-colors">
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-400/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative bg-navy-800 rounded-lg p-6 border border-skyblue-700/30 group-hover:border-skyblue-500/50 transition-colors duration-300">
                 {/* Project Image Placeholder */}
                 <div className="h-48 bg-gradient-to-br from-navy-700 to-navy-900 rounded mb-6 flex items-center justify-center text-slate-500">
                   {project.image ? (
@@ -34,7 +34,7 @@ export default function Projects() {
                   )}
                 </div>
 
-                <h3 className="text-slate-200 font-semibold text-xl mb-2 group-hover:text-teal-400 transition-colors">
+                <h3 className="text-skyblue-700 font-semibold text-xl mb-2 group-hover:text-skyblue-500 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-slate-400 leading-relaxed mb-4">
@@ -44,7 +44,7 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs font-mono text-teal-400 bg-teal-400/10 px-3 py-1 rounded"
+                      className="text-xs font-mono text-skyblue-700 bg-skyblue-700/10 px-3 py-1 rounded"
                     >
                       {tech}
                     </span>
@@ -56,7 +56,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-teal-400 hover:text-teal-300 transition-colors font-mono text-sm flex items-center gap-2"
+                      className="text-skyblue-700 hover:text-skyblue-500 transition-colors font-mono text-sm flex items-center gap-2"
                     >
                       ↗ GitHub
                     </a>
@@ -66,7 +66,7 @@ export default function Projects() {
                       href={project.external}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-teal-400 hover:text-teal-300 transition-colors font-mono text-sm flex items-center gap-2"
+                      className="text-skyblue-700 hover:text-skyblue-500 transition-colors font-mono text-sm flex items-center gap-2"
                     >
                       ↗ Live
                     </a>
@@ -84,7 +84,7 @@ export default function Projects() {
           </p>
           <a
             href="#"
-            className="inline-block px-8 py-3 border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition-colors font-mono text-sm"
+            className="inline-block px-8 py-3 border border-skyblue-700 text-skyblue-700 rounded hover:border-skyblue-500 hover:text-skyblue-500 hover:bg-skyblue-500/10 transition-colors font-mono text-sm"
           >
             View All Projects
           </a>

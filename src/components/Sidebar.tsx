@@ -38,7 +38,7 @@ export default function Sidebar() {
           <h1 className="text-4xl font-bold text-slate-200 mb-2">
             {portfolioData.header.name}
           </h1>
-          <h2 className="text-xl text-teal-400 font-medium mb-6">
+          <h2 className="text-xl text-skyblue-500 font-medium mb-6">
             {portfolioData.header.title}
           </h2>
           <p className="text-slate-400 max-w-xs leading-relaxed text-sm mb-12">
@@ -97,7 +97,7 @@ export default function Sidebar() {
         <h1 className="text-3xl font-bold text-slate-200 mb-1">
           {portfolioData.header.name}
         </h1>
-        <h2 className="text-base text-teal-400 font-medium mb-4">
+        <h2 className="text-base text-skyblue-500 font-medium mb-4">
           {portfolioData.header.title}
         </h2>
         <p className="text-slate-400 leading-relaxed text-sm mb-6">

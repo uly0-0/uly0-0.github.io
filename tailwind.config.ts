@@ -18,6 +18,7 @@ const config: Config = {
         skyblue: {
           400: "#64beff",
           500: "#64beff",
+          700: "#2d6a9f",
         },
         slate: {
           400: "#bababa",

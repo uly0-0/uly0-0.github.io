@@ -21,7 +21,7 @@ export default function Writing() {
               animationFillMode: 'forwards',
             }}
           >
-            <div className="flex gap-6 items-start group-hover:text-teal-400 transition-colors">
+            <div className="flex gap-6 items-start transition-colors">
               <div className="w-24 h-24 flex-shrink-0 bg-gradient-to-br from-navy-700 to-navy-900 rounded overflow-hidden">
                 {article.image ? (
                   <img
@@ -37,10 +37,10 @@ export default function Writing() {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-slate-200 font-semibold group-hover:text-teal-400 transition-colors">
+                  <h3 className="text-skyblue-700 font-semibold group-hover:text-skyblue-500 transition-colors">
                     {article.title}
                   </h3>
-                  <span className="text-teal-400 text-sm">↗</span>
+                  <span className="text-skyblue-700 group-hover:text-skyblue-500 transition-colors text-sm">↗</span>
                 </div>
                 <p className="text-slate-400 text-sm mb-2">
                   {article.description}
@@ -57,7 +57,7 @@ export default function Writing() {
         <div className="text-center pt-8 border-t border-navy-700 mt-12">
           <a
             href="#"
-            className="inline-block px-8 py-3 border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition-colors font-mono text-sm"
+            className="inline-block px-8 py-3 border border-skyblue-700 text-skyblue-700 rounded hover:border-skyblue-500 hover:text-skyblue-500 hover:bg-skyblue-500/10 transition-colors font-mono text-sm"
           >
             View All Writing
           </a>

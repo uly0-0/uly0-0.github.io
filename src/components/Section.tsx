@@ -25,9 +25,8 @@ export default function Section({ id, title, children }: SectionProps) {
     >
       <div className="flex items-center mb-12 gap-4 lg:hidden">
         <span className="text-teal-400 font-mono text-lg">
-          0{[1, 2, 3, 4].indexOf(['about', 'experience', 'projects', 'writing'].indexOf(id)) + 1}.
         </span>
-        <h2 className="text-3xl font-bold text-slate-200">{title}</h2>
+        <h2 className="text-3xl font-bold text-skyblue-400">{title}</h2>
         <div className="hidden sm:flex-1 sm:h-0.5 sm:bg-gradient-to-r sm:from-teal-400 sm:to-transparent sm:ml-4"></div>
       </div>
       {children}

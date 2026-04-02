@@ -32,8 +32,8 @@
       "companyUrl": "https://www.fldusd.org/",
       "position": "Information Technology Technician (Volunteer)",
       "date": "June - September 2025",
-      "description": "Provided technical support and system maintenance for a school district environment, diagnosing and resolving hardware and software issues to ensure mininimal downtime, and ensuring secure handling of data through regular backups and updates. Assisted in improving network infrastructure by configuring wireless access points and organizing network distribution systems.",
-      "tech": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
+      "description": "Returned as a volunteer to support ongoing IT operations ahead of the new school year. Assisted staff with hardware refreshes, device imaging, and software configurations across sites. Helped audit and document network assets and wrote scripts to automate Active Directory management.",
+      "tech": ["Windows OS", "Network Configuration", "Hardware Troubleshooting", "Active Directory", "Device Imaging"]
     },
     {
       "id": 2,
@@ -41,19 +41,19 @@
       "companyUrl": "https://www.fldusd.org/",
       "position": "Information Technology Technician",
       "date": "June - August, 2016 - 2019",
-      "description": "Provided technical support and system maintenance for a school district environment, diagnosing and resolving hardware and software issues to ensure mininimal downtime, and ensuring secure handling of data through regular backups and updates. Assisted in improving network infrastructure by configuring wireless access points and organizing network distribution systems.",
-      "tech": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
+      "description": "Provided technical support and system maintenance for a school district environment, diagnosing and resolving hardware and software issues to ensure minimal downtime, and ensuring secure handling of data through regular backups and updates. Assisted in improving network infrastructure by configuring wireless access points and organizing network distribution systems.",
+      "tech": ["Windows OS", "Network Administration", "Hardware Repair", "Data Backup & Recovery", "Wireless Networking"]
     }
   ],
   "projects": [
     {
       "id": 1,
-      "title": "Project One",
-      "description": "A beautiful web application showcasing modern design patterns and accessibility best practices.",
+      "title": "Archivr - Media Recommendation",
+      "description": "Archivr is a website that serves a one-stop hub for tracking, rating, and discussing your favorite movies and TV. It allows you to share your thoughts, join discussions, and discover new favorites based on personalized recommendations. ",
       "image": "/images/project1.jpg",
       "tech": ["React", "TypeScript", "Tailwind CSS"],
-      "github": "https://github.com",
-      "external": "https://example.com",
+      "github": "https://github.com/Junqor/Archivr?tab=readme-ov-file",
+      "external": "https://archivr.vercel.app/",
       "featured": true
     },
     {
