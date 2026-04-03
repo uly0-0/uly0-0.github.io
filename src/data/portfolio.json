@@ -70,7 +70,7 @@
       "id": 3,
       "title": "Hospital Network Design and Implementation - Packet Tracer",
       "description": "Designed and implemented a secure network infrastructure for a hospital environment, incorporating VLAN segmentation, firewall rules, and intrusion detection systems to protect sensitive patient data and ensure compliance with healthcare regulations.",
-      "image": "/images/network.jpg",
+      "image": "/images/Network.jpg",
       "tech": ["Network Configuration", "Network Administration", "Packet Tracer", "Cisco Networking"],
       "github": "https://github.com",
       "external": "https://example.com",

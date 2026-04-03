@@ -1,6 +1,7 @@
 'use client';
-import Image from 'next/image';
 import portfolioData from '@/data/portfolio.json';
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Sidebar() {
   const scrollToSection = (sectionId: string) => {
@@ -12,9 +13,9 @@ export default function Sidebar() {
 
   const getIconPath = (iconName: string) => {
     const iconMap: { [key: string]: string } = {
-      github: '/icons/github.svg',
-      linkedin: '/icons/linkedin.svg',
-      mail: '/icons/email.svg'
+      github: `${BASE}/icons/github.svg`,
+      linkedin: `${BASE}/icons/linkedin.svg`,
+      mail: `${BASE}/icons/email.svg`,
     };
     return iconMap[iconName] || null;
   };
@@ -78,12 +79,7 @@ export default function Sidebar() {
               >
                 {iconPath && (
                   <div className="icon-wrapper" style={{ filter: 'brightness(0.6) saturate(0.8)' }}>
-                    <Image
-                      src={iconPath}
-                      alt={link.name}
-                      width={24}
-                      height={24}
-                    />
+                    <img src={iconPath} alt={link.name} width={24} height={24} />
                   </div>
                 )}
               </a>
@@ -118,12 +114,7 @@ export default function Sidebar() {
               >
                 {iconPath && (
                   <div className="icon-wrapper" style={{ filter: 'brightness(0.6) saturate(0.8)' }}>
-                    <Image
-                      src={iconPath}
-                      alt={link.name}
-                      width={20}
-                      height={20}
-                    />
+                    <img src={iconPath} alt={link.name} width={20} height={20} />
                   </div>
                 )}
               </a>

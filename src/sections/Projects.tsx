@@ -1,8 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import Section from '@/components/Section';
 import portfolioData from '@/data/portfolio.json';
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Projects() {
   const featuredProjects = portfolioData.projects.filter((p) => p.featured);
@@ -28,14 +29,11 @@ export default function Projects() {
                 {/* Project Image Placeholder */}
                 <div className="h-60 bg-gradient-to-br from-navy-700 to-navy-900 rounded mb-6 flex items-center justify-center text-slate-500">
                   {project.image ? (
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover rounded"
-                      />
-                    </div>
+                    <img
+                      src={`${BASE}${project.image}`}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded"
+                    />
                   ) : (
                     <span>[Project Image]</span>
                   )}
