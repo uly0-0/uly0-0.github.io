@@ -54,10 +54,10 @@ export default function Experience() {
         <div className="text-center pt-8 border-t border-navy-700">
           <a
             href={`${BASE}/resume/UlyssesOchoaResume.pdf`}
-            download
+            download="UlyssesOchoaResume.pdf"
             className="inline-block px-8 py-3 border border-skyblue-700 text-skyblue-700 rounded hover:border-skyblue-500 hover:text-skyblue-500 hover:bg-skyblue-500/10 transition-colors font-mono text-sm"
           >
-            View My Resume
+            Download Resume
           </a>
         </div>
       </div>
