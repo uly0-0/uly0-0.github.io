@@ -26,7 +26,7 @@ export default function Experience() {
                 <h3 className="text-slate-200 font-semibold group-hover:text-skyblue-500 transition-colors">
                   {job.position}
                   <span className="text-skyblue-700 ml-2">@</span>
-                  <span className="text-skyblue-700 group-hover:underline">{job.company}</span>
+                  <span className="text-skyblue-400 group-hover:underline">{job.company}</span>
                 </h3>
               </a>
               <p className="text-slate-400 text-sm font-mono mt-1">

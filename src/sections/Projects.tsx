@@ -18,11 +18,14 @@ export default function Projects() {
               animationFillMode: 'forwards',
             }}
           >
-            <div className="group relative">
+            <div
+              className="group relative cursor-pointer"
+              onClick={() => window.open(project.external || project.github || '#', '_blank', 'noopener,noreferrer')}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-slate-400/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative bg-navy-800 rounded-lg p-6 border border-skyblue-700/30 group-hover:border-skyblue-500/50 transition-colors duration-300">
                 {/* Project Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-navy-700 to-navy-900 rounded mb-6 flex items-center justify-center text-slate-500">
+                <div className="h-60 bg-gradient-to-br from-navy-700 to-navy-900 rounded mb-6 flex items-center justify-center text-slate-500">
                   {project.image ? (
                     <img
                       src={project.image}
@@ -56,6 +59,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="text-skyblue-700 hover:text-skyblue-500 transition-colors font-mono text-sm flex items-center gap-2"
                     >
                       ↗ GitHub
@@ -66,6 +70,7 @@ export default function Projects() {
                       href={project.external}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="text-skyblue-700 hover:text-skyblue-500 transition-colors font-mono text-sm flex items-center gap-2"
                     >
                       ↗ Live
@@ -83,7 +88,7 @@ export default function Projects() {
             Want to see more projects?
           </p>
           <a
-            href="#"
+            href="https://github.com/uly0-0"
             className="inline-block px-8 py-3 border border-skyblue-700 text-skyblue-700 rounded hover:border-skyblue-500 hover:text-skyblue-500 hover:bg-skyblue-500/10 transition-colors font-mono text-sm"
           >
             View All Projects

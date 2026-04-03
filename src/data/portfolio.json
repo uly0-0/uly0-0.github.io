@@ -50,31 +50,31 @@
       "id": 1,
       "title": "Archivr - Media Recommendation",
       "description": "Archivr is a website that serves a one-stop hub for tracking, rating, and discussing your favorite movies and TV. It allows you to share your thoughts, join discussions, and discover new favorites based on personalized recommendations. ",
-      "image": "/images/project1.jpg",
-      "tech": ["React", "TypeScript", "Tailwind CSS"],
+      "image": "/images/Archivr.png",
+      "tech": ["SQL", "Digital Ocean", "Cloud hosting"],
       "github": "https://github.com/Junqor/Archivr?tab=readme-ov-file",
       "external": "https://archivr.vercel.app/",
       "featured": true
     },
     {
       "id": 2,
-      "title": "Project Two",
-      "description": "Full-stack application with real-time features and comprehensive testing.",
-      "image": "/images/project2.jpg",
-      "tech": ["Next.js", "Node.js", "PostgreSQL"],
-      "github": "https://github.com",
+      "title": "Phishing URL Detector",
+      "description": "A phishing URL detector that uses machine learning to analyze URLs and identify potential phishing threats. The model is trained on a dataset of known phishing and legitimate URLs, utilizing features such as URL length, presence of special characters, and domain age to make predictions.",
+      "image": "/images/phishing.png",
+      "tech": ["Python", "Machine Learning", "Phishing Detection"],
+      "github": "https://github.com/uly0-0/PhishingWebsiteClassifierCSCI167Project",
       "external": "https://example.com",
       "featured": true
     },
     {
       "id": 3,
-      "title": "Project Three",
-      "description": "Interactive dashboard with data visualization and custom animations.",
-      "image": "/images/project3.jpg",
-      "tech": ["React", "D3.js", "Express"],
+      "title": "Hospital Network Design and Implementation - Packet Tracer",
+      "description": "Designed and implemented a secure network infrastructure for a hospital environment, incorporating VLAN segmentation, firewall rules, and intrusion detection systems to protect sensitive patient data and ensure compliance with healthcare regulations.",
+      "image": "/images/network.jpg",
+      "tech": ["Network Configuration", "Network Administration", "Packet Tracer", "Cisco Networking"],
       "github": "https://github.com",
       "external": "https://example.com",
-      "featured": false
+      "featured": true
     }
   ],
   "writing": [

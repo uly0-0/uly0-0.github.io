@@ -7,7 +7,7 @@ export default function Writing() {
   const featuredWrites = portfolioData.writing.filter((w) => w.featured);
 
   return (
-    <Section id="writing" title="Writing">
+    <Section id="writing" title="Blog & Writing">
       <div className="space-y-12">
         {featuredWrites.map((article, index) => (
           <a
