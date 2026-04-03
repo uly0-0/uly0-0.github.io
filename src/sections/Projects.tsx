@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Section from '@/components/Section';
 import portfolioData from '@/data/portfolio.json';
 
@@ -27,11 +28,14 @@ export default function Projects() {
                 {/* Project Image Placeholder */}
                 <div className="h-60 bg-gradient-to-br from-navy-700 to-navy-900 rounded mb-6 flex items-center justify-center text-slate-500">
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover rounded"
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover rounded"
+                      />
+                    </div>
                   ) : (
                     <span>[Project Image]</span>
                   )}
