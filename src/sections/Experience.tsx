@@ -3,6 +3,8 @@
 import Section from '@/components/Section';
 import portfolioData from '@/data/portfolio.json';
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Experience() {
   return (
     <Section id="experience" title="Experience">
@@ -51,7 +53,7 @@ export default function Experience() {
         {/* View Resume Link */}
         <div className="text-center pt-8 border-t border-navy-700">
           <a
-            href="/resume/UlyssesOchoaResume.pdf"
+            href={`${BASE}/resume/UlyssesOchoaResume.pdf`}
             download
             className="inline-block px-8 py-3 border border-skyblue-700 text-skyblue-700 rounded hover:border-skyblue-500 hover:text-skyblue-500 hover:bg-skyblue-500/10 transition-colors font-mono text-sm"
           >
