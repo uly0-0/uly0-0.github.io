@@ -3,6 +3,8 @@
 import Section from '@/components/Section';
 import portfolioData from '@/data/portfolio.json';
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Writing() {
   const featuredWrites = portfolioData.writing.filter((w) => w.featured);
 
@@ -12,7 +14,7 @@ export default function Writing() {
         {featuredWrites.map((article, index) => (
           <a
             key={article.id}
-            href={article.url}
+            href={`${BASE}${article.url}`}
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-0 animate-fade-in block group"
@@ -25,7 +27,7 @@ export default function Writing() {
               <div className="w-24 h-24 flex-shrink-0 bg-gradient-to-br from-navy-700 to-navy-900 rounded overflow-hidden">
                 {article.image ? (
                   <img
-                    src={article.image}
+                    src={`${BASE}${article.image}`}
                     alt={article.title}
                     className="w-full h-full object-cover"
                   />

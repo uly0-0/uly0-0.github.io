@@ -80,20 +80,20 @@
   "writing": [
     {
       "id": 1,
-      "title": "Understanding Web Accessibility",
+      "title": "Enhanced Facial Detection: Age and Mask Identification for Diverse Applications",
       "date": "2024",
-      "description": "A deep dive into WCAG guidelines and practical tips for building accessible web applications.",
-      "image": "/images/writing1.jpg",
-      "url": "https://medium.com",
+      "description": "A report on building a real-time facial analysis system using deep learning to estimate age and detect mask usage. Integrated trained CNN models into a live web app, achieving over 94% accuracy in mask detection.",
+      "image": "/images/facedetection.jpg",
+      "url": "/resume/Enhanced Facial Detection.pdf",
       "featured": true
     },
     {
       "id": 2,
-      "title": "Modern React Patterns",
+      "title": "Detecting Phishing Website: A Deep Learning Approach with MLP",
       "date": "2024",
-      "description": "Exploring the latest React patterns and best practices for scalable applications.",
-      "image": "/images/writing2.jpg",
-      "url": "https://medium.com",
+      "description": "A deep learning–based approach to detecting phishing websites using a Multilayer Perceptron, achieving high accuracy through feature engineering and hyperparameter tuning. This report highlights the model’s effectiveness in identifying malicious URLs while minimizing false positives and negatives.",
+      "image": "/images/phishingdetection.png",
+      "url": "/resume/Detecting PhishingWebsites A Deep Learning Approach with MLP.pdf",
       "featured": true
     },
     {
@@ -101,7 +101,7 @@
       "title": "CSS Grid vs Flexbox",
       "date": "2023",
       "description": "When to use CSS Grid and when to use Flexbox in your projects.",
-      "image": "/images/writing3.jpg",
+      "image": "/images/image3.png",
       "url": "https://medium.com",
       "featured": false
     }
