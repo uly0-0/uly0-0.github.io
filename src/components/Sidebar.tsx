@@ -20,7 +20,12 @@ export default function Sidebar() {
     return iconMap[iconName] || null;
   };
 
-  const navItems = ['about', 'experience', 'projects', 'Blog'];
+  const navItems = [
+    { label: 'about', id: 'about' },
+    { label: 'experience', id: 'experience' },
+    { label: 'projects', id: 'projects' },
+    { label: 'Blog', id: 'writing' },
+  ];
 
   return (
     <>
@@ -50,13 +55,13 @@ export default function Sidebar() {
           <nav>
             <ul className="space-y-5">
               {navItems.map((item) => (
-                <li key={item}>
+                <li key={item.id}>
                   <button
-                    onClick={() => scrollToSection(item)}
+                    onClick={() => scrollToSection(item.id)}
                     className="group flex items-center gap-4 text-slate-500 hover:text-slate-200 transition-all duration-300 font-medium uppercase tracking-widest text-xs"
                   >
                     <span className="block h-px w-8 bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 transition-all duration-300" />
-                    {item}
+                    {item.label}
                   </button>
                 </li>
               ))}
