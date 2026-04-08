@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import portfolioData from '@/data/portfolio.json';
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -21,10 +22,10 @@ export default function Sidebar() {
   };
 
   const navItems = [
-    { label: 'about', id: 'about' },
-    { label: 'experience', id: 'experience' },
-    { label: 'projects', id: 'projects' },
-    { label: 'Blog', id: 'writing' },
+    { label: 'about', id: 'about', href: null },
+    { label: 'experience', id: 'experience', href: null },
+    { label: 'projects', id: 'projects', href: null },
+    { label: 'Blog', id: 'writing', href: '/writing' },
   ];
 
   return (
@@ -56,13 +57,23 @@ export default function Sidebar() {
             <ul className="space-y-5">
               {navItems.map((item) => (
                 <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="group flex items-center gap-4 text-slate-500 hover:text-slate-200 transition-all duration-300 font-medium uppercase tracking-widest text-xs"
-                  >
-                    <span className="block h-px w-8 bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 transition-all duration-300" />
-                    {item.label}
-                  </button>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="group flex items-center gap-4 text-slate-500 hover:text-slate-200 transition-all duration-300 font-medium uppercase tracking-widest text-xs"
+                    >
+                      <span className="block h-px w-8 bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 transition-all duration-300" />
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className="group flex items-center gap-4 text-slate-500 hover:text-slate-200 transition-all duration-300 font-medium uppercase tracking-widest text-xs"
+                    >
+                      <span className="block h-px w-8 bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 transition-all duration-300" />
+                      {item.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

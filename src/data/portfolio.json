@@ -74,26 +74,32 @@
       "tech": ["Network Configuration", "Network Administration", "Packet Tracer", "Cisco Networking"],
       "github": "https://github.com",
       "external": "https://example.com",
-      "featured": true
+      "featured": false
     }
   ],
   "writing": [
     {
       "id": 1,
+      "slug": "enhanced-facial-detection-age-mask-identification",
       "title": "Enhanced Facial Detection: Age and Mask Identification for Diverse Applications",
       "date": "2024",
       "description": "A report on building a real-time facial analysis system using deep learning to estimate age and detect mask usage. Integrated trained CNN models into a live web app, achieving over 94% accuracy in mask detection.",
       "image": "/images/facedetection.jpg",
       "url": "/resume/Enhanced Facial Detection.pdf",
+      "madeAt": "Cal State Fresno",
+      "tags": ["Deep Learning", "CNN", "Python", "OpenCV"],
       "featured": true
     },
     {
       "id": 2,
+      "slug": "detecting-phishing-websites-deep-learning-mlp",
       "title": "Detecting Phishing Website: A Deep Learning Approach with MLP",
       "date": "2024",
       "description": "A deep learning–based approach to detecting phishing websites using a Multilayer Perceptron, achieving high accuracy through feature engineering and hyperparameter tuning. This report highlights the model’s effectiveness in identifying malicious URLs while minimizing false positives and negatives.",
       "image": "/images/phishingdetection.png",
       "url": "/resume/Detecting PhishingWebsites A Deep Learning Approach with MLP.pdf",
+      "madeAt": "Cal State Fresno",
+      "tags": ["Machine Learning", "MLP", "Python", "Cybersecurity"],
       "featured": true
     },
     {
@@ -103,6 +109,8 @@
       "description": "When to use CSS Grid and when to use Flexbox in your projects.",
       "image": "/images/image3.png",
       "url": "https://medium.com",
+      "madeAt": "Medium",
+      "tags": ["CSS", "Web Development"],
       "featured": false
     }
   ]
