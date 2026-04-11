@@ -10,6 +10,7 @@ export type WritingEntry = {
   image: string;
   url: string;
   slug?: string;
+  mdFile?: string;
   madeAt?: string;
   tags?: string[];
   featured: boolean;

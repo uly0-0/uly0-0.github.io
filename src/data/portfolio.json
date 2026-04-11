@@ -80,6 +80,58 @@
   "writing": [
     {
       "id": 1,
+      "slug": "flag-in-flame-writeup",
+      "title": "Flag In Flame — Log File Analysis and Encoded Image Recovery",
+      "date": "2025",
+      "description": "A forensic investigation into a log file concealing a Base64-encoded JPEG image, followed by hexadecimal decoding to recover a hidden flag.",
+      "image": "",
+      "url": "",
+      "mdFile": "Flag in Flame Writeup.md",
+      "madeAt": "picoCTF",
+      "tags": ["Digital Forensics", "Base64", "Hex Decoding", "CTF"],
+      "featured": true
+    },
+    {
+      "id": 2,
+      "slug": "hidden-in-plain-sight-writeup",
+      "title": "Hidden In Plain Sight — Steganographic Analysis of a Concealed Payload",
+      "date": "2025",
+      "description": "A multi-layered forensic analysis combining EXIF metadata inspection, nested Base64 decoding, and steghide extraction to recover a hidden flag from a JPEG image.",
+      "image": "",
+      "url": "",
+      "mdFile": "Hidden In Plain Sight Writeup.md",
+      "madeAt": "picoCTF",
+      "tags": ["Digital Forensics", "Steganography", "EXIF", "CTF"],
+      "featured": true
+    },
+    {
+      "id": 3,
+      "slug": "log-hunt-writeup",
+      "title": "Log Hunt — Log File Analysis and Encoded Image Recovery",
+      "date": "2025",
+      "description": "Forensic analysis of a log file used as a Base64-encoded image carrier, with hex-encoded flag recovery from the reconstructed image.",
+      "image": "",
+      "url": "",
+      "mdFile": "Log Hunt Writeup.md",
+      "madeAt": "picoCTF",
+      "tags": ["Digital Forensics", "Log Analysis", "Encoding", "CTF"],
+      "featured": false
+    },
+    {
+      "id": 4,
+      "slug": "riddle-registry-writeup",
+      "title": "Riddle Registry — Metadata Forensics and Encoded Artifact Recovery from a PDF",
+      "date": "2025",
+      "description": "Structured forensic inspection of a PDF file using integrity verification, string analysis, and metadata examination to recover a Base64-encoded flag from the Author field.",
+      "image": "",
+      "url": "",
+      "mdFile": "Riddle Registry Writeup.md",
+      "madeAt": "picoCTF",
+      "tags": ["Digital Forensics", "PDF Forensics", "Metadata", "CTF"],
+      "featured": false
+    },
+    {
+      "id": 5,
       "slug": "enhanced-facial-detection-age-mask-identification",
       "title": "Enhanced Facial Detection: Age and Mask Identification for Diverse Applications",
       "date": "2024",
@@ -91,7 +143,7 @@
       "featured": true
     },
     {
-      "id": 2,
+      "id": 6,
       "slug": "detecting-phishing-websites-deep-learning-mlp",
       "title": "Detecting Phishing Website: A Deep Learning Approach with MLP",
       "date": "2024",
@@ -103,7 +155,7 @@
       "featured": true
     },
     {
-      "id": 3,
+      "id": 7,
       "title": "CSS Grid vs Flexbox",
       "date": "2023",
       "description": "When to use CSS Grid and when to use Flexbox in your projects.",
