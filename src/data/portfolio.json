@@ -48,6 +48,15 @@
   "projects": [
     {
       "id": 1,
+      "title": "Digital Forensics Image Analysis",
+      "description": "A digital forensics analysis project focusing on the analysis of files for evidence recovery. A forensic investigation report detailing the process of analyzing a file for evidence recovery, including the use of various forensic tools and techniques to extract and interpret data relevant to a hypothetical case study.",
+      "image": "/images/digitalfingerprint.jpg",
+      "tech": ["Autopsy", "FTK Imager", "Digital Forensics", "Evidence Recovery"],
+      "github": "https://github.com/uly0-0/Digital_Forensics-EnCase_Image_Analysis",
+      "featured": true
+    },
+    {
+      "id": 2,
       "title": "Archivr - Media Recommendation",
       "description": "Archivr is a website that serves a one-stop hub for tracking, rating, and discussing your favorite movies and TV. It allows you to share your thoughts, join discussions, and discover new favorites based on personalized recommendations. ",
       "image": "/images/Archivr.png",
@@ -57,17 +66,17 @@
       "featured": true
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Phishing URL Detector",
       "description": "A phishing URL detector that uses machine learning to analyze URLs and identify potential phishing threats. The model is trained on a dataset of known phishing and legitimate URLs, utilizing features such as URL length, presence of special characters, and domain age to make predictions.",
       "image": "/images/phishing.png",
       "tech": ["Python", "Machine Learning", "Phishing Detection"],
       "github": "https://github.com/uly0-0/PhishingWebsiteClassifierCSCI167Project",
       "external": "https://example.com",
-      "featured": true
+      "featured": false
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Hospital Network Design and Implementation - Packet Tracer",
       "description": "Designed and implemented a secure network infrastructure for a hospital environment, incorporating VLAN segmentation, firewall rules, and intrusion detection systems to protect sensitive patient data and ensure compliance with healthcare regulations.",
       "image": "/images/Network.jpg",
@@ -84,7 +93,7 @@
       "title": "Flag In Flame — Log File Analysis and Encoded Image Recovery",
       "date": "2025",
       "description": "A forensic investigation into a log file concealing a Base64-encoded JPEG image, followed by hexadecimal decoding to recover a hidden flag.",
-      "image": "",
+      "image": "/images/logfileanalysis.jpg",
       "url": "",
       "mdFile": "Flag in Flame Writeup.md",
       "madeAt": "picoCTF",
@@ -97,7 +106,7 @@
       "title": "Hidden In Plain Sight — Steganographic Analysis of a Concealed Payload",
       "date": "2025",
       "description": "A multi-layered forensic analysis combining EXIF metadata inspection, nested Base64 decoding, and steghide extraction to recover a hidden flag from a JPEG image.",
-      "image": "",
+      "image": "/images/steganography.jpg",
       "url": "",
       "mdFile": "Hidden In Plain Sight Writeup.md",
       "madeAt": "picoCTF",
@@ -150,20 +159,11 @@
       "description": "A deep learning–based approach to detecting phishing websites using a Multilayer Perceptron, achieving high accuracy through feature engineering and hyperparameter tuning. This report highlights the model’s effectiveness in identifying malicious URLs while minimizing false positives and negatives.",
       "image": "/images/phishingdetection.png",
       "url": "/resume/Detecting PhishingWebsites A Deep Learning Approach with MLP.pdf",
+      "mdFile": "Detecting Phishing Websites - A Deep Learning Approach with MLP.md",
       "madeAt": "Cal State Fresno",
       "tags": ["Machine Learning", "MLP", "Python", "Cybersecurity"],
       "featured": true
-    },
-    {
-      "id": 7,
-      "title": "CSS Grid vs Flexbox",
-      "date": "2023",
-      "description": "When to use CSS Grid and when to use Flexbox in your projects.",
-      "image": "/images/image3.png",
-      "url": "https://medium.com",
-      "madeAt": "Medium",
-      "tags": ["CSS", "Web Development"],
-      "featured": false
     }
+    
   ]
 }

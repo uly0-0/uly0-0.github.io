@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
 import {
   getPublicAssetHref,
   getWritingSourceHref,
@@ -19,6 +18,264 @@ export function generateStaticParams() {
     .map((article) => ({
       slug: article.slug as string,
     }));
+}
+
+function renderInlineMarkdown(text: string) {
+  const parts: React.ReactNode[] = [];
+  let remaining = text;
+  let key = 0;
+
+  const pushText = (value: string) => {
+    if (value) {
+      parts.push(value);
+    }
+  };
+
+  while (remaining.length > 0) {
+    const linkMatch = remaining.match(/^\[([^\]]+)\]\(([^)]+)\)/);
+    const strongMatch = remaining.match(/^\*\*([^*]+)\*\*/);
+    const emMatch = remaining.match(/^\*([^*]+)\*/);
+    const codeMatch = remaining.match(/^`([^`]+)`/);
+
+    if (linkMatch) {
+      parts.push(
+        <a
+          key={`link-${key++}`}
+          href={linkMatch[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-skyblue-400 hover:text-skyblue-500 transition-colors underline underline-offset-2"
+        >
+          {linkMatch[1]}
+        </a>,
+      );
+      remaining = remaining.slice(linkMatch[0].length);
+      continue;
+    }
+
+    if (strongMatch) {
+      parts.push(
+        <strong key={`strong-${key++}`} className="text-slate-300 font-semibold">
+          {strongMatch[1]}
+        </strong>,
+      );
+      remaining = remaining.slice(strongMatch[0].length);
+      continue;
+    }
+
+    if (emMatch) {
+      parts.push(
+        <em key={`em-${key++}`} className="text-slate-400 italic">
+          {emMatch[1]}
+        </em>,
+      );
+      remaining = remaining.slice(emMatch[0].length);
+      continue;
+    }
+
+    if (codeMatch) {
+      parts.push(
+        <code key={`code-${key++}`} className="bg-navy-900 text-skyblue-400 font-mono text-sm px-1.5 py-0.5 rounded">
+          {codeMatch[1]}
+        </code>,
+      );
+      remaining = remaining.slice(codeMatch[0].length);
+      continue;
+    }
+
+    const nextSpecial = remaining.search(/\[|\*|`/);
+    if (nextSpecial === -1) {
+      pushText(remaining);
+      break;
+    }
+
+    if (nextSpecial === 0) {
+      // Special char didn't match any pattern — emit it literally and advance
+      pushText(remaining[0]);
+      remaining = remaining.slice(1);
+    } else {
+      pushText(remaining.slice(0, nextSpecial));
+      remaining = remaining.slice(nextSpecial);
+    }
+  }
+
+  return parts;
+}
+
+function renderMarkdown(markdown: string) {
+  const lines = markdown.replace(/\r\n/g, '\n').split('\n');
+  const nodes: React.ReactNode[] = [];
+  let i = 0;
+  let key = 0;
+
+  const isListItem = (line: string) => /^(-|\d+\.)\s+/.test(line);
+  const isTableSeparator = (line: string) => {
+    const cells = line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim());
+
+    return cells.length > 1 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+  };
+
+  const parseTableRow = (line: string) => line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim());
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    if (!line.trim()) {
+      i += 1;
+      continue;
+    }
+
+    if (line.startsWith('```')) {
+      const codeLines: string[] = [];
+      i += 1;
+      while (i < lines.length && !lines[i].startsWith('```')) {
+        codeLines.push(lines[i]);
+        i += 1;
+      }
+      i += 1;
+      nodes.push(
+        <pre key={`pre-${key++}`} className="mb-4 rounded-lg overflow-x-auto">
+          <code className="block bg-navy-900 text-skyblue-400 font-mono text-sm p-4 rounded-lg overflow-x-auto whitespace-pre">
+            {codeLines.join('\n')}
+          </code>
+        </pre>,
+      );
+      continue;
+    }
+
+    if (line.includes('|') && i + 1 < lines.length && isTableSeparator(lines[i + 1])) {
+      const headers = parseTableRow(line);
+      const rows: string[][] = [];
+      i += 2;
+
+      while (i < lines.length && lines[i].includes('|') && lines[i].trim()) {
+        rows.push(parseTableRow(lines[i]));
+        i += 1;
+      }
+
+      nodes.push(
+        <div key={`table-${key++}`} className="mb-6 overflow-x-auto rounded-lg border border-navy-700">
+          <table className="min-w-full border-collapse text-sm">
+            <thead className="bg-navy-900/80">
+              <tr>
+                {headers.map((header, headerIndex) => (
+                  <th
+                    key={`th-${key++}-${headerIndex}`}
+                    className="border-b border-navy-700 px-4 py-3 text-left font-semibold text-slate-200"
+                  >
+                    {renderInlineMarkdown(header)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, rowIndex) => (
+                <tr key={`tr-${key++}-${rowIndex}`} className="odd:bg-navy-800/40 even:bg-navy-800/20">
+                  {headers.map((_, cellIndex) => (
+                    <td key={`td-${key++}-${rowIndex}-${cellIndex}`} className="border-b border-navy-700 px-4 py-3 text-slate-400 align-top">
+                      {renderInlineMarkdown(row[cellIndex] || '')}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>,
+      );
+      continue;
+    }
+
+    if (line.startsWith('# ')) {
+      nodes.push(
+        <h1 key={`h1-${key++}`} className="text-3xl font-bold text-slate-200 mb-6 mt-8 first:mt-0">
+          {renderInlineMarkdown(line.slice(2))}
+        </h1>,
+      );
+      i += 1;
+      continue;
+    }
+
+    if (line.startsWith('## ')) {
+      nodes.push(
+        <h2 key={`h2-${key++}`} className="text-2xl font-semibold text-slate-200 mb-4 mt-8">
+          {renderInlineMarkdown(line.slice(3))}
+        </h2>,
+      );
+      i += 1;
+      continue;
+    }
+
+    if (line.startsWith('### ')) {
+      nodes.push(
+        <h3 key={`h3-${key++}`} className="text-lg font-semibold text-slate-300 mb-3 mt-6">
+          {renderInlineMarkdown(line.slice(4))}
+        </h3>,
+      );
+      i += 1;
+      continue;
+    }
+
+    if (line.startsWith('> ')) {
+      const quoteLines = [line.slice(2)];
+      i += 1;
+      while (i < lines.length && lines[i].startsWith('> ')) {
+        quoteLines.push(lines[i].slice(2));
+        i += 1;
+      }
+      nodes.push(
+        <blockquote key={`quote-${key++}`} className="border-l-2 border-skyblue-700 pl-4 my-4 text-slate-400 italic">
+          <p className="text-slate-400 leading-7 mb-4">{renderInlineMarkdown(quoteLines.join(' '))}</p>
+        </blockquote>,
+      );
+      continue;
+    }
+
+    if (line === '---') {
+      nodes.push(<hr key={`hr-${key++}`} className="border-navy-700 my-8" />);
+      i += 1;
+      continue;
+    }
+
+    if (isListItem(line)) {
+      const ordered = /^\d+\./.test(line);
+      const items: React.ReactNode[] = [];
+      while (i < lines.length && isListItem(lines[i])) {
+        items.push(
+          <li key={`li-${key++}`} className="text-slate-400 leading-7">
+            {renderInlineMarkdown(lines[i].replace(/^(-|\d+\.)\s+/, ''))}
+          </li>,
+        );
+        i += 1;
+      }
+      nodes.push(
+        ordered ? (
+          <ol key={`ol-${key++}`} className="list-decimal list-inside text-slate-400 mb-4 space-y-1">
+            {items}
+          </ol>
+        ) : (
+          <ul key={`ul-${key++}`} className="list-disc list-inside text-slate-400 mb-4 space-y-1">
+            {items}
+          </ul>
+        ),
+      );
+      continue;
+    }
+
+    const paragraphLines = [line];
+    i += 1;
+    while (i < lines.length && lines[i].trim() && !lines[i].startsWith('# ') && !lines[i].startsWith('## ') && !lines[i].startsWith('### ') && !lines[i].startsWith('> ') && lines[i] !== '---' && !lines[i].startsWith('```') && !isListItem(lines[i])) {
+      paragraphLines.push(lines[i]);
+      i += 1;
+    }
+
+    nodes.push(
+      <p key={`p-${key++}`} className="text-slate-400 leading-7 mb-4">
+        {renderInlineMarkdown(paragraphLines.join(' '))}
+      </p>,
+    );
+  }
+
+  return nodes;
 }
 
 export default async function WritingArticlePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -82,89 +339,7 @@ export default async function WritingArticlePage({ params }: { params: Promise<{
 
         {markdownContent ? (
           <div className="rounded-2xl border border-navy-700 bg-navy-800/40 p-6 sm:p-10">
-            <ReactMarkdown
-              components={{
-                h1: ({ children }) => (
-                  <h1 className="text-3xl font-bold text-slate-200 mb-6 mt-8 first:mt-0">{children}</h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-2xl font-semibold text-slate-200 mb-4 mt-8">{children}</h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-lg font-semibold text-slate-300 mb-3 mt-6">{children}</h3>
-                ),
-                p: ({ children }) => (
-                  <p className="text-slate-400 leading-7 mb-4">{children}</p>
-                ),
-                strong: ({ children }) => (
-                  <strong className="text-slate-300 font-semibold">{children}</strong>
-                ),
-                em: ({ children }) => (
-                  <em className="text-slate-400 italic">{children}</em>
-                ),
-                code: ({ children, className }) => {
-                  const isBlock = className?.startsWith('language-');
-                  if (isBlock) {
-                    return (
-                      <code className="block bg-navy-900 text-skyblue-400 font-mono text-sm p-4 rounded-lg overflow-x-auto whitespace-pre">
-                        {children}
-                      </code>
-                    );
-                  }
-                  return (
-                    <code className="bg-navy-900 text-skyblue-400 font-mono text-sm px-1.5 py-0.5 rounded">
-                      {children}
-                    </code>
-                  );
-                },
-                pre: ({ children }) => (
-                  <pre className="mb-4 rounded-lg overflow-x-auto">{children}</pre>
-                ),
-                blockquote: ({ children }) => (
-                  <blockquote className="border-l-2 border-skyblue-700 pl-4 my-4 text-slate-400 italic">
-                    {children}
-                  </blockquote>
-                ),
-                ul: ({ children }) => (
-                  <ul className="list-disc list-inside text-slate-400 mb-4 space-y-1">{children}</ul>
-                ),
-                ol: ({ children }) => (
-                  <ol className="list-decimal list-inside text-slate-400 mb-4 space-y-1">{children}</ol>
-                ),
-                li: ({ children }) => (
-                  <li className="text-slate-400 leading-7">{children}</li>
-                ),
-                hr: () => (
-                  <hr className="border-navy-700 my-8" />
-                ),
-                table: ({ children }) => (
-                  <div className="overflow-x-auto mb-4">
-                    <table className="w-full text-sm text-slate-400 border-collapse">{children}</table>
-                  </div>
-                ),
-                thead: ({ children }) => (
-                  <thead className="text-slate-300 border-b border-navy-700">{children}</thead>
-                ),
-                th: ({ children }) => (
-                  <th className="text-left py-2 pr-6 font-semibold text-slate-300">{children}</th>
-                ),
-                td: ({ children }) => (
-                  <td className="py-2 pr-6 border-b border-navy-700/50">{children}</td>
-                ),
-                a: ({ href, children }) => (
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-skyblue-400 hover:text-skyblue-500 transition-colors underline underline-offset-2"
-                  >
-                    {children}
-                  </a>
-                ),
-              }}
-            >
-              {markdownContent}
-            </ReactMarkdown>
+            {renderMarkdown(markdownContent)}
           </div>
         ) : (
           <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">

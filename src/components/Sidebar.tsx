@@ -5,13 +5,6 @@ import portfolioData from '@/data/portfolio.json';
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Sidebar() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const getIconPath = (iconName: string) => {
     const iconMap: { [key: string]: string } = {
       github: `${BASE}/icons/github.svg`,
@@ -66,13 +59,13 @@ export default function Sidebar() {
                       {item.label}
                     </Link>
                   ) : (
-                    <button
-                      onClick={() => scrollToSection(item.id)}
+                    <a
+                      href={`#${item.id}`}
                       className="group flex items-center gap-4 text-slate-500 hover:text-slate-200 transition-all duration-300 font-medium uppercase tracking-widest text-xs"
                     >
                       <span className="block h-px w-8 bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 transition-all duration-300" />
                       {item.label}
-                    </button>
+                    </a>
                   )}
                 </li>
               ))}
