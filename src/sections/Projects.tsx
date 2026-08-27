@@ -78,6 +78,17 @@ export default function Projects() {
                       ↗ Live
                     </a>
                   )}
+                  {project.pdf && (
+                    <a
+                      href={`${BASE}${project.pdf}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-skyblue-700 hover:text-skyblue-500 transition-colors font-mono text-sm flex items-center gap-2"
+                    >
+                      ↗ View Report (PDF)
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

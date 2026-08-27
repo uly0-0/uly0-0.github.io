@@ -53,6 +53,7 @@
       "image": "/images/digitalfingerprint.jpg",
       "tech": ["Autopsy", "FTK Imager", "Digital Forensics", "Evidence Recovery"],
       "github": "https://github.com/uly0-0/Digital_Forensics-EnCase_Image_Analysis",
+      "pdf": "/resume/Digital_Forensic_Examination_Report_JimmyWilson.pdf",
       "featured": true
     },
     {
@@ -163,7 +164,58 @@
       "madeAt": "Cal State Fresno",
       "tags": ["Machine Learning", "MLP", "Python", "Cybersecurity"],
       "featured": true
+    },
+    {
+      "id": 7,
+      "slug": "ethernet-arp-lab",
+      "title": "Wireshark Lab: Ethernet & ARP Protocol Analysis",
+      "date": "2025",
+      "description": "Packet-level analysis of Ethernet frame addressing and the ARP request/reply cycle, examining how devices resolve IP addresses to MAC addresses at the data link layer.",
+      "image": "",
+      "url": "",
+      "mdFile": "ethernet-arp-lab.md",
+      "madeAt": "Cal State Fresno",
+      "tags": ["Wireshark", "Ethernet", "ARP", "Networking"],
+      "featured": false
+    },
+    {
+      "id": 8,
+      "slug": "ip-lab",
+      "title": "Wireshark Lab: IP Protocol & Fragmentation Analysis",
+      "date": "2025",
+      "description": "Analysis of IPv4 datagram headers and fragmentation behavior using traceroute captures, examining which header fields change across hops and how oversized datagrams are split to fit link MTUs.",
+      "image": "",
+      "url": "",
+      "mdFile": "ip-lab.md",
+      "madeAt": "Cal State Fresno",
+      "tags": ["Wireshark", "IPv4", "Fragmentation", "Networking"],
+      "featured": false
+    },
+    {
+      "id": 9,
+      "slug": "tcp-lab",
+      "title": "Wireshark Lab: TCP Protocol Analysis",
+      "date": "2025",
+      "description": "Examination of a TCP file upload capture covering the three-way handshake, sequence/acknowledgment numbering, flow control, and slow start congestion behavior.",
+      "image": "",
+      "url": "",
+      "mdFile": "tcp-lab.md",
+      "madeAt": "Cal State Fresno",
+      "tags": ["Wireshark", "TCP", "Congestion Control", "Networking"],
+      "featured": false
+    },
+    {
+      "id": 10,
+      "slug": "http-lab",
+      "title": "Wireshark Lab: HTTP Protocol Analysis",
+      "date": "2025",
+      "description": "Investigation of HTTP GET/response cycles, conditional caching, multi-segment responses, embedded object retrieval, and HTTP Basic Authentication via live packet captures.",
+      "image": "",
+      "url": "",
+      "mdFile": "http-lab.md",
+      "madeAt": "Cal State Fresno",
+      "tags": ["Wireshark", "HTTP", "Networking"],
+      "featured": false
     }
-    
   ]
 }
